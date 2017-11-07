@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app='angularClient'>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Simple Text Editor</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="app/assets/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="app/assets/css/skins/skin-orange-light.css">
+
+    <link rel="stylesheet" href="app/assets/css/theme.css">
+    <link rel="stylesheet" href="app/assets/css/custom.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+</head>
+<body class="fixed hold-transition skin-orange-light sidebar-mini">
+    <div class="page-processing" ng-show="processing">
+        <div class="loader">
+            <img src="app/assets/images/loading.svg" class="loader-inner">
+        </div>
+    </div>
+    <div ui-view></div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular dependencies -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="app/assets/js/jquery-ui.min.js"></script>
+
+    <!-- Load providers before services -->
+    <script src="app/components/providers/providers.index.js"></script>
+    <script src="app/components/providers/providers.genericmessages.js"></script>
+
+    <!-- editor module -->
+    <script src="app/modules/editor/editor.index.js"></script>
+    <script src="app/modules/editor/controllers/editor.controller.js"></script>
+
+    <!-- Main module -->
+    <script src="app.js"></script>
+
+</body>
+</html>
