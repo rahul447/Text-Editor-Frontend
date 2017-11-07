@@ -16,20 +16,25 @@ function editorCtrl($http, $scope, $rootScope) {
     $scope.checkInput = function(){
         if($scope.lastContent !== $scope.Content) {
             console.log("=============");
+            console.log(" $scope.lastContent : ", $scope.lastContent);
+            console.log(" $scope.Content : ", $scope.Content);
 
-            sendChange({"Content" : $scope.Content})
-            .then(function(data) {
-                console.log("data : ", data)
-            }).catch(function(error) {
-                console.log("err : ", error);
-            });
+            if($scope.Content) {
+                sendChange({"Content" : $scope.Content})
+                    .then(function(data) {
+                        console.log("data : ", data)
+                    }).catch(function(error) {
+                    console.log("err : ", error);
+                });
+            }
+
         }
     };
 
     setInterval(function() {
         $scope.checkInput();
         $scope.lastContent = $scope.Content;
-    },2000);
+    },5000);
 
     function sendChange(params) {
         var requestData = {
