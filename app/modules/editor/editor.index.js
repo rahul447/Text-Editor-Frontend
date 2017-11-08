@@ -1,1 +1,1 @@
-angular.module('editor', []);
+angular.module('editor', ['editorService']);
